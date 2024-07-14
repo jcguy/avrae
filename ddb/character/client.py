@@ -1,9 +1,9 @@
 import logging
 from collections import namedtuple
 
-from ddb.baseclient import BaseClient
-from ddb.errors import CharacterServiceException
-from utils.config import DDB_CHARACTER_SERVICE_URL as CHARACTER_SERVICE_BASE
+from ..baseclient import BaseClient
+from ..errors import CharacterServiceException
+from ...utils.config import DDB_CHARACTER_SERVICE_URL as CHARACTER_SERVICE_BASE
 
 log = logging.getLogger(__name__)
 

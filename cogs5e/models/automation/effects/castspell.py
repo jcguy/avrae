@@ -1,8 +1,8 @@
-import aliasing.api.combat
-import gamedata
-import gamedata.lookuputils
-from cogs5e.models.errors import RequiresLicense, InvalidArgument
-from utils.functions import smart_trim
+from .....aliasing.api import combat as combat_api
+from ..... import gamedata
+from .....gamedata import lookuputils
+from ...errors import RequiresLicense, InvalidArgument
+from .....utils.functions import smart_trim
 from . import Effect
 from .ieffect import IEffectMetaVar
 from ..results import CastSpellResult
@@ -47,7 +47,7 @@ class CastSpell(Effect):
         type_e10s = await autoctx.ctx.bot.ddb.get_accessible_entities(
             ctx=autoctx.ctx, user_id=autoctx.ctx.author.id, entity_type=gamedata.Spell.entity_type
         )
-        if not gamedata.lookuputils.can_access(self.spell, type_e10s):
+        if not lookuputils.can_access(self.spell, type_e10s):
             raise RequiresLicense(self.spell, type_e10s is not None)
 
     def run(self, autoctx):
@@ -79,7 +79,7 @@ class CastSpell(Effect):
             # parenting
             explicit_parent = None
             if self.parent is not None and (parent_ref := autoctx.metavars.get(self.parent, None)) is not None:
-                if not isinstance(parent_ref, (IEffectMetaVar, aliasing.api.combat.SimpleEffect)):
+                if not isinstance(parent_ref, (IEffectMetaVar, combat_api.SimpleEffect)):
                     raise InvalidArgument(
                         f"Could not set IEffect parent: The variable `{self.parent}` is not an IEffectMetaVar "
                         f"(got `{type(parent_ref).__name__}`)."

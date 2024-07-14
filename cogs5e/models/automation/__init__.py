@@ -2,10 +2,10 @@ from typing import Optional, TYPE_CHECKING, Union
 
 import disnake.utils
 
-import aliasing.api.statblock
-import aliasing.evaluators
-from utils.enums import CritDamageType
-from utils.functions import get_guild_member
+from ....aliasing.api import statblock
+from ....aliasing import evaluators
+from ....utils.enums import CritDamageType
+from ....utils.functions import get_guild_member
 from .effects import *
 from .errors import *
 from .results import *
@@ -133,8 +133,8 @@ class Automation:
         """
         if not self.effects:
             return "No effects."
-        evaluator = aliasing.evaluators.AutomationEvaluator.with_caster(caster)
-        evaluator.builtins["caster"] = aliasing.api.statblock.AliasStatBlock(caster)
+        evaluator = evaluators.AutomationEvaluator.with_caster(caster)
+        evaluator.builtins["caster"] = statblock.AliasStatBlock(caster)
         inner = Effect.build_child_str(self.effects, caster, evaluator)
         if not inner:
             inner = ", ".join(e.type for e in self.effects)

@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from utils.functions import get_guild_member, user_from_id
+from ..utils.functions import get_guild_member, user_from_id
 
 
 async def update_user_map(ctx, ddb_id, discord_id):

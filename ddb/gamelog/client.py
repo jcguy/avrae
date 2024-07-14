@@ -6,15 +6,15 @@ import traceback
 import aiohttp
 from pymongo.errors import DuplicateKeyError
 
-import ddb
-from ddb.baseclient import BaseClient
-from ddb.gamelog.constants import AVRAE_EVENT_SOURCE, GAME_LOG_PUBSUB_CHANNEL
-from ddb.gamelog.context import GameLogEventContext
-from ddb.gamelog.errors import CampaignAlreadyLinked, CampaignLinkException, IgnoreEvent, LinkNotAllowed, NoCampaignLink
-from ddb.gamelog.event import GameLogEvent
-from ddb.gamelog.link import CampaignLink
-from ddb.utils import ddb_id_to_discord_id
-from utils.config import DDB_GAMELOG_ENDPOINT
+from ... import ddb
+from ..baseclient import BaseClient
+from ..gamelog.constants import AVRAE_EVENT_SOURCE, GAME_LOG_PUBSUB_CHANNEL
+from ..gamelog.context import GameLogEventContext
+from ..gamelog.errors import CampaignAlreadyLinked, CampaignLinkException, IgnoreEvent, LinkNotAllowed, NoCampaignLink
+from ..gamelog.event import GameLogEvent
+from ..gamelog.link import CampaignLink
+from ..utils import ddb_id_to_discord_id
+from ...utils.config import DDB_GAMELOG_ENDPOINT
 
 log = logging.getLogger(__name__)
 

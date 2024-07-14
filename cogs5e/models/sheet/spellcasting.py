@@ -1,6 +1,6 @@
-from cogs5e.models.errors import CounterOutOfBounds, InvalidSpellLevel
-from utils import constants
-from utils.functions import bubble_format
+from ..errors import CounterOutOfBounds, InvalidSpellLevel
+from ....utils import constants
+from ....utils.functions import bubble_format
 
 
 class Spellbook:

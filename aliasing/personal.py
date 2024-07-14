@@ -5,8 +5,8 @@ Personal aliases and snippets. Unrelated to the workshop.
 import abc
 import datetime
 
-from aliasing.constants import ALIAS_SIZE_LIMIT, SNIPPET_SIZE_LIMIT
-from cogs5e.models.errors import InvalidArgument
+from .constants import ALIAS_SIZE_LIMIT, SNIPPET_SIZE_LIMIT
+from ..cogs5e.models.errors import InvalidArgument
 
 
 class _CustomizationBase(abc.ABC):

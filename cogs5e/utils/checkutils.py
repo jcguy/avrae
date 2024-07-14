@@ -3,12 +3,12 @@ from typing import Any
 
 from d20 import roll
 
-import cogs5e.initiative as init
-from cogs5e.models import embeds
-from cogs5e.models.errors import InvalidArgument
-from cogs5e.models.sheet.base import Skill
-from utils.constants import SKILL_MAP, STAT_ABBREVIATIONS, STAT_NAMES
-from utils.functions import a_or_an, camel_to_title, maybe_http_url, verbose_stat
+from .. import initiative as init
+from ..models import embeds
+from ..models.errors import InvalidArgument
+from ..models.sheet.base import Skill
+from ...utils.constants import SKILL_MAP, STAT_ABBREVIATIONS, STAT_NAMES
+from ...utils.functions import a_or_an, camel_to_title, maybe_http_url, verbose_stat
 
 
 def update_csetting_args(char, args, skill=None):

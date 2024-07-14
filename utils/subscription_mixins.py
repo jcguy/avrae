@@ -1,6 +1,6 @@
 import abc
 
-from cogs5e.models.errors import NotAllowed
+from ..cogs5e.models.errors import NotAllowed
 
 
 class MixinBase(abc.ABC):

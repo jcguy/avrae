@@ -1,15 +1,15 @@
 import itertools
 import logging
 
-from cogs5e.models.errors import CounterOutOfBounds
-from cogs5e.models.sheet.attack import AttackList
-from cogs5e.models.sheet.base import BaseStats, Levels, Saves, Skills
-from cogs5e.models.sheet.resistance import Resistances
-from cogs5e.models.sheet.spellcasting import Spellbook
-from cogs5e.models.sheet.statblock import StatBlock
-from utils import config
-from utils.constants import SKILL_MAP
-from utils.functions import a_or_an, bubble_format
+from ..cogs5e.models.errors import CounterOutOfBounds
+from ..cogs5e.models.sheet.attack import AttackList
+from ..cogs5e.models.sheet.base import BaseStats, Levels, Saves, Skills
+from ..cogs5e.models.sheet.resistance import Resistances
+from ..cogs5e.models.sheet.spellcasting import Spellbook
+from ..cogs5e.models.sheet.statblock import StatBlock
+from ..utils import config
+from ..utils.constants import SKILL_MAP
+from ..utils.functions import a_or_an, bubble_format
 from .shared import Sourced
 
 log = logging.getLogger(__name__)

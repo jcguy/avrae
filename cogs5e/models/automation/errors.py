@@ -1,5 +1,5 @@
-from aliasing.errors import EvaluationError
-from cogs5e.models.errors import AvraeException
+from ....aliasing.errors import EvaluationError
+from ..errors import AvraeException
 
 __all__ = (
     "AutomationException",

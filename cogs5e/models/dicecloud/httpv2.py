@@ -13,9 +13,9 @@ log = logging.getLogger(__name__)
 
 
 class DicecloudV2HTTP:
-    def __init__(self, api_base, username, password, no_auth, debug=False):
+    def __init__(self, api_base, email, password, no_auth, debug=False):
         self.base = api_base
-        self.username = username
+        self.email = email
         self.password = password
         self.no_auth = no_auth
         self.debug = debug
@@ -47,6 +47,7 @@ class DicecloudV2HTTP:
         return data
 
     async def try_until_max(self, method, endpoint, data={}, headers={}, params={}):
+        print(f"Making request: {method} {endpoint} {headers}")
         async with aiohttp.ClientSession() as session:
             reauthed = self.no_auth
             for _ in range(MAX_TRIES):
@@ -55,6 +56,7 @@ class DicecloudV2HTTP:
                         method, f"{self.base}{endpoint}", data=data, headers=headers, params=params
                     ) as resp:
                         log.info(f"Dicecloud V2 returned {resp.status} ({endpoint})")
+                        print(f"Dicecloud V2 returned {resp.status} ({endpoint})")
                         data = await resp.json(encoding="utf-8")
                         if resp.status == 200:
                             return data
@@ -85,7 +87,9 @@ class DicecloudV2HTTP:
 
     async def get_auth(self, *, force_reauth=False):
         if not self.no_auth and (force_reauth or not self.auth_token or self.expiration <= time.time()):
-            data = await self.try_until_max("POST", "/login", {"username": self.username, "password": self.password})
+            payload = {"email": self.email, "password": self.password}
+            print(f"logging in: {payload}")
+            data = await self.try_until_max("POST", "/login", payload)
             self.auth_token = data["token"]
             self.user_id = data["id"]
             self.expiration = dtparser.parse(data["tokenExpires"]).timestamp()

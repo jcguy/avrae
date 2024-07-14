@@ -2,12 +2,12 @@ import d20
 from d20 import roll
 from disnake.ext import commands
 
-from cogs5e.initiative.effects.passive import resolve_check_advs, resolve_save_advs
-from cogs5e.models.errors import InvalidArgument
-from cogs5e.models.sheet.base import BaseStats, Levels, Saves, Skills
-from cogs5e.models.sheet.resistance import Resistances
-from utils.argparser import ParsedArguments
-from utils.constants import SAVE_NAMES, STAT_ABBREVIATIONS
+from .effects.passive import resolve_check_advs, resolve_save_advs
+from ..models.errors import InvalidArgument
+from ..models.sheet.base import BaseStats, Levels, Saves, Skills
+from ..models.sheet.resistance import Resistances
+from ...utils.argparser import ParsedArguments
+from ...utils.constants import SAVE_NAMES, STAT_ABBREVIATIONS
 from .combatant import Combatant
 from .utils import create_combatant_id
 

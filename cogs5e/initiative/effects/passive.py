@@ -1,11 +1,11 @@
 from typing import Callable, Iterable, List, Optional, Set, Tuple, Type, TypeVar, Union
 
-from cogs5e.models.errors import InvalidArgument
-from cogs5e.models.sheet.resistance import Resistance
-from utils.argparser import ParsedArguments
-from utils.constants import SKILL_NAMES, STAT_ABBREVIATIONS, STAT_NAMES
-from utils.enums import AdvantageType
-from utils.functions import camel_to_title, verbose_stat
+from ...models.errors import InvalidArgument
+from ...models.sheet.resistance import Resistance
+from ....utils.argparser import ParsedArguments
+from ....utils.constants import SKILL_NAMES, STAT_ABBREVIATIONS, STAT_NAMES
+from ....utils.enums import AdvantageType
+from ....utils.functions import camel_to_title, verbose_stat
 
 _OwnerT = TypeVar("_OwnerT")
 _DT = TypeVar("_DT")

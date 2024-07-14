@@ -1,4 +1,4 @@
-from utils.enums import ActivationType
+from ..utils.enums import ActivationType
 from .mixins import AutomatibleMixin
 
 

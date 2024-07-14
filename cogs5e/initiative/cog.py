@@ -8,18 +8,17 @@ from d20 import roll
 from disnake.ext import commands
 from disnake.ext.commands import NoPrivateMessage
 
-from aliasing import helpers
-from cogs5e.models.character import Character
-from cogs5e.models.embeds import EmbedWithAuthor, EmbedWithCharacter, EmbedWithColor
-from cogs5e.models.errors import InvalidArgument, NoSelectionElements, SelectionException
-from cogs5e.models.sheet.attack import Attack
-from cogs5e.utils import actionutils, checkutils, gameutils, targetutils
-from cogs5e.utils.help_constants import *
-from cogsmisc.stats import Stats
-from gamedata.lookuputils import select_monster_full, select_spell_full
-from utils import checks, constants
-from utils.argparser import argparse
-from utils.functions import (
+from ...aliasing import helpers
+from ..models.embeds import EmbedWithAuthor, EmbedWithCharacter, EmbedWithColor
+from ..models.errors import InvalidArgument, NoSelectionElements, SelectionException
+from ..models.sheet.attack import Attack
+from ..utils import actionutils, checkutils, gameutils, targetutils
+from ..utils.help_constants import *
+from ...cogsmisc.stats import Stats
+from ...gamedata.lookuputils import select_monster_full, select_spell_full
+from ...utils import checks, constants
+from ...utils.argparser import argparse
+from ...utils.functions import (
     confirm,
     get_guild_member,
     get_initials,
@@ -356,7 +355,7 @@ class InitTracker(commands.Cog):
         `-note <note>` - Sets the combatant's note.
         [user snippet]
         """
-        char: Character = await ctx.get_character()
+        char: "Character" = await ctx.get_character()
         args = await helpers.parse_snippets(args, ctx, character=char)
         args = argparse(args)
 

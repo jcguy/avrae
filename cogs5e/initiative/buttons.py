@@ -3,9 +3,9 @@ from typing import Iterable, TYPE_CHECKING
 
 import disnake
 
-import gamedata
-from cogs5e.utils import actionutils
-from utils.argparser import ParsedArguments
+from ... import gamedata
+from ..utils import actionutils
+from ...utils.argparser import ParsedArguments
 from . import Combat, CombatNotFound, CombatantType, utils
 from .utils import InteractionMessageType
 

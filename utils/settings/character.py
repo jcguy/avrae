@@ -4,9 +4,9 @@ from typing import Optional
 from pydantic import ValidationError, conint
 from pydantic.color import Color
 
-from utils.functions import get_positivity
+from ..functions import get_positivity
 from . import SettingsBaseModel
-from utils.enums import CoinsAutoConvert
+from ..enums import CoinsAutoConvert
 
 log = logging.getLogger(__name__)
 

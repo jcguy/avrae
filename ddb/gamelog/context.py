@@ -2,11 +2,11 @@ import logging
 
 import disnake
 
-from cogs5e.models.errors import NoCharacter
-from ddb.gamelog.errors import IgnoreEvent
-from ddb.utils import ddb_id_to_discord_user
-from gamedata.compendium import compendium
-from utils.functions import get_guild_member, user_from_id
+from ...cogs5e.models.errors import NoCharacter
+from .errors import IgnoreEvent
+from ..utils import ddb_id_to_discord_user
+from ...gamedata.compendium import compendium
+from ...utils.functions import get_guild_member, user_from_id
 
 _sentinel = object()
 log = logging.getLogger(__name__)

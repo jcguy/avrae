@@ -1,6 +1,6 @@
 from typing import List, Optional, Union
 
-from ddb.utils import ApiBaseModel
+from ..utils import ApiBaseModel
 
 
 # ==== REST ====

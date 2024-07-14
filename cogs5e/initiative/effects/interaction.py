@@ -3,10 +3,10 @@ from typing import List, Optional, TYPE_CHECKING
 
 import disnake
 
-import gamedata
-from cogs5e.models.errors import InvalidArgument
-from cogs5e.models.sheet.attack import Attack, old_to_automation
-from utils.argparser import ParsedArguments
+from .... import gamedata
+from ...models.errors import InvalidArgument
+from ...models.sheet.attack import Attack, old_to_automation
+from ....utils.argparser import ParsedArguments
 from ..utils import create_button_interaction_id
 
 if TYPE_CHECKING:

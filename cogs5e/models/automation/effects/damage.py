@@ -3,8 +3,8 @@ import copy
 import d20
 import draconic
 
-from cogs5e.models.sheet.resistance import Resistances, do_resistances
-from utils.enums import CritDamageType
+from ...sheet.resistance import Resistances, do_resistances
+from .....utils.enums import CritDamageType
 from . import Effect
 from .roll import RollEffectMetaVar
 from .. import utils

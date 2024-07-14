@@ -1,7 +1,8 @@
 import asyncio
 
-import ddb.errors
-from cogs5e.models.sheet.integrations import LiveIntegration
+
+from ...ddb import errors
+from .sheet.integrations import LiveIntegration
 
 _sentinel = object()
 
@@ -98,7 +99,7 @@ class DDBSheetSync(LiveIntegration):
     async def _run_awaitables(self, awaitables):
         try:
             return await asyncio.gather(*awaitables)
-        except ddb.errors.Forbidden:
+        except errors.Forbidden:
             pass
 
     async def commit(self, ctx):

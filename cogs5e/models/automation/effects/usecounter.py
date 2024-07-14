@@ -1,7 +1,7 @@
 import abc
 import collections
 
-import gamedata
+from ..... import gamedata
 from . import Effect
 from ..errors import AutomationException, NoCounterFound, StopExecution
 from ..results import UseCounterResult

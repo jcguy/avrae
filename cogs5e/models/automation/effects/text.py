@@ -1,6 +1,6 @@
-import gamedata
-import gamedata.lookuputils
-from cogs5e.models.errors import RequiresLicense
+from ..... import gamedata
+from .....gamedata import lookuputils
+from ...errors import RequiresLicense
 from . import Effect
 from ..results import TextResult
 
@@ -39,7 +39,7 @@ class Text(Effect):
         type_e10s = await autoctx.ctx.bot.ddb.get_accessible_entities(
             ctx=autoctx.ctx, user_id=autoctx.ctx.author.id, entity_type=entity.entitlement_entity_type
         )
-        if not gamedata.lookuputils.can_access(entity, type_e10s):
+        if not lookuputils.can_access(entity, type_e10s):
             raise RequiresLicense(entity, type_e10s is not None)
 
     def run(self, autoctx):

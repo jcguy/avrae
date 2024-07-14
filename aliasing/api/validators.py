@@ -7,9 +7,9 @@ from typing import List, Optional, Set
 import automation_common
 from pydantic import BaseModel, conint, constr, validator
 
-import cogs5e.initiative as init
-from cogs5e.models.errors import InvalidArgument
-from utils import enums
+from ...cogs5e import initiative as init
+from ...cogs5e.models.errors import InvalidArgument
+from ...utils import enums
 
 str255 = constr(max_length=255)
 

@@ -4,17 +4,17 @@ from typing import Iterable, List, Optional, TYPE_CHECKING, Union
 
 import disnake
 
-from cogs5e.initiative import InitiativeEffect
-from cogs5e.initiative.types import BaseCombatant
-from cogs5e.models import embeds
-from cogs5e.models.errors import InvalidArgument, InvalidSpellLevel, RequiresLicense
-from cogs5e.models.sheet.action import Action, Actions
-from cogs5e.models.sheet.attack import Attack, AttackList
-from gamedata import lookuputils, monster
-from utils import constants
-from utils.enums import CritDamageType
-from utils.functions import a_or_an, confirm, maybe_http_url, natural_join, search_and_select, smart_trim, verbose_stat
-from utils.settings import ServerSettings
+from ..initiative import InitiativeEffect
+from ..initiative.types import BaseCombatant
+from ..models import embeds
+from ..models.errors import InvalidArgument, InvalidSpellLevel, RequiresLicense
+from ..models.sheet.action import Action, Actions
+from ..models.sheet.attack import Attack, AttackList
+from ...gamedata import lookuputils, monster
+from ...utils import constants
+from ...utils.enums import CritDamageType
+from ...utils.functions import a_or_an, confirm, maybe_http_url, natural_join, search_and_select, smart_trim, verbose_stat
+from ...utils.settings import ServerSettings
 
 if TYPE_CHECKING:
     from cogs5e.initiative import Combatant, Combat

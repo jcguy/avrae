@@ -4,23 +4,23 @@ from collections import namedtuple
 import cachetools
 from disnake.ext.commands import NoPrivateMessage
 
-import aliasing.evaluators
-from cogs5e.models.ddbsync import DDBSheetSync
-from cogs5e.models.dicecloud.integration import DicecloudIntegration
-from cogs5e.models.embeds import EmbedWithCharacter
-from cogs5e.models.errors import ExternalImportError, InvalidArgument, NoCharacter, NoReset
-from cogs5e.models.sheet.action import Actions
-from cogs5e.models.sheet.attack import AttackList
-from cogs5e.models.sheet.base import BaseStats, Levels, Saves, Skills
-from cogs5e.models.sheet.mixins import HasIntegrationMixin
-from cogs5e.models.sheet.player import CustomCounter, DeathSaves, ManualOverrides
-from cogs5e.models.sheet.resistance import Resistances
-from cogs5e.models.sheet.spellcasting import Spellbook, SpellbookSpell
-from cogs5e.models.sheet.statblock import DESERIALIZE_MAP as _DESER, StatBlock
-from cogs5e.models.sheet.coinpurse import Coinpurse
-from cogs5e.sheets.abc import SHEET_VERSION
-from utils.functions import confirm, search_and_select
-from utils.settings import CharacterSettings
+from ...aliasing.evaluators import MathEvaluator
+from .ddbsync import DDBSheetSync
+from .dicecloud.integration import DicecloudIntegration
+from .embeds import EmbedWithCharacter
+from .errors import ExternalImportError, InvalidArgument, NoCharacter, NoReset
+from .sheet.action import Actions
+from .sheet.attack import AttackList
+from .sheet.base import BaseStats, Levels, Saves, Skills
+from .sheet.mixins import HasIntegrationMixin
+from .sheet.player import CustomCounter, DeathSaves, ManualOverrides
+from .sheet.resistance import Resistances
+from .sheet.spellcasting import Spellbook, SpellbookSpell
+from .sheet.statblock import DESERIALIZE_MAP as _DESER, StatBlock
+from .sheet.coinpurse import Coinpurse
+from ..sheets.abc import SHEET_VERSION
+from ...utils.functions import confirm, search_and_select
+from ...utils.settings import CharacterSettings
 from enum import Enum
 
 log = logging.getLogger(__name__)
@@ -330,7 +330,7 @@ class Character(StatBlock):
         :param varstr - the expression to evaluate.
         :returns int - the value of the expression."""
         varstr = str(varstr).strip("<>{}")
-        evaluator = aliasing.evaluators.MathEvaluator.with_character(self)
+        evaluator = MathEvaluator.with_character(self)
 
         try:
             return int(evaluator.eval(varstr))

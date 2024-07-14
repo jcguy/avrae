@@ -5,7 +5,7 @@ import disnake
 from pydantic import BaseModel
 
 from . import SettingsBaseModel
-from utils.enums import CritDamageType
+from ..enums import CritDamageType
 
 DEFAULT_DM_ROLE_NAMES = {"dm", "gm", "dungeon master", "game master"}
 

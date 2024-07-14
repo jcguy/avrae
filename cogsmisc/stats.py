@@ -11,7 +11,7 @@ from collections import Counter
 
 from disnake.ext import commands
 
-from utils import config
+from ..utils import config
 
 GUILD_RDB_KEY = "stats.cluster_guilds"
 

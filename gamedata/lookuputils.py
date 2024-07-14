@@ -10,15 +10,15 @@ from typing import Dict, List, TYPE_CHECKING, TypeVar, Callable
 
 import disnake
 
-import gamedata
-from cogs5e.models.embeds import EmbedWithAuthor
-from cogs5e.models.errors import NoActiveBrew, RequiresLicense
-from cogs5e.models.homebrew import Pack, Tome
-from cogs5e.models.homebrew.bestiary import Bestiary
-from cogsmisc.stats import Stats
-from utils.constants import HOMEBREW_EMOJI, HOMEBREW_ICON
-from utils.functions import get_selection, search_and_select, search
-from utils.settings.guild import LegacyPreference
+from .. import gamedata
+from ..cogs5e.models.embeds import EmbedWithAuthor
+from ..cogs5e.models.errors import NoActiveBrew, RequiresLicense
+from ..cogs5e.models.homebrew import Pack, Tome
+from ..cogs5e.models.homebrew.bestiary import Bestiary
+from ..cogsmisc.stats import Stats
+from ..utils.constants import HOMEBREW_EMOJI, HOMEBREW_ICON
+from ..utils.functions import get_selection, search_and_select, search
+from ..utils.settings.guild import LegacyPreference
 from .compendium import compendium
 from .klass import ClassFeature
 from .race import RaceFeature

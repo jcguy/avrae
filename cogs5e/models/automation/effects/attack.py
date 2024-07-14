@@ -1,7 +1,7 @@
 import d20
 
-from utils.enums import AdvantageType
-from utils.functions import reconcile_adv
+from .....utils.enums import AdvantageType
+from .....utils.functions import reconcile_adv
 from . import Effect
 from ..errors import AutomationException, NoAttackBonus, TargetException
 from ..results import AttackResult

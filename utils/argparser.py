@@ -7,7 +7,7 @@ from typing import Iterator
 from disnake.ext.commands import BadArgument, ExpectedClosingQuoteError
 from disnake.ext.commands.view import StringView
 
-from cogs5e.models.errors import InvalidArgument
+from ..cogs5e.models.errors import InvalidArgument
 
 EPHEMERAL_ARG_RE = re.compile(r"(\S+)(\d+)")
 SINGLE_ARG_RE = re.compile(r"([a-zA-Z]\S*(?<!\d))(\d+)?")  # g1: flag name g2: ephem?

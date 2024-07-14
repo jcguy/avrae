@@ -1,4 +1,4 @@
-from ddb.gamelog import errors
+from . import errors
 
 
 class CampaignLink:

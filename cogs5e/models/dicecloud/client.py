@@ -5,7 +5,7 @@ import urllib.parse
 
 from MeteorClient import MeteorClient
 
-from utils import config
+from ....utils import config
 from .errors import InsertFailure, LoginFailure
 from .http import DicecloudHTTP
 

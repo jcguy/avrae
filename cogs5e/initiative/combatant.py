@@ -3,15 +3,15 @@ from typing import Callable, List, Optional, TYPE_CHECKING, TypeVar
 
 import disnake
 
-import cogs5e.models.character
-from cogs5e.models.sheet.attack import AttackList
-from cogs5e.models.sheet.base import BaseStats, Levels, Saves, Skill, Skills
-from cogs5e.models.sheet.resistance import Resistance, Resistances
-from cogs5e.models.sheet.spellcasting import Spellbook
-from cogs5e.models.sheet.statblock import DESERIALIZE_MAP, StatBlock
-from gamedata.monster import MonsterCastableSpellbook
-from utils.constants import RESIST_TYPES
-from utils.functions import get_guild_member, search_and_select
+from ..models import character
+from ..models.sheet.attack import AttackList
+from ..models.sheet.base import BaseStats, Levels, Saves, Skill, Skills
+from ..models.sheet.resistance import Resistance, Resistances
+from ..models.sheet.spellcasting import Spellbook
+from ..models.sheet.statblock import DESERIALIZE_MAP, StatBlock
+from ...gamedata.monster import MonsterCastableSpellbook
+from ...utils.constants import RESIST_TYPES
+from ...utils.functions import get_guild_member, search_and_select
 from .effects import InitiativeEffect
 from .errors import RequiresContext
 from .types import BaseCombatant, CombatantType
@@ -704,7 +704,7 @@ class PlayerCombatant(Combatant):
         inst = super().from_dict(raw, ctx, combat)
         inst.character_id = raw["character_id"]
         inst.character_owner = raw["character_owner"]
-        inst._character = await cogs5e.models.character.Character.from_bot_and_ids(
+        inst._character = await character.Character.from_bot_and_ids(
             ctx.bot, inst.character_owner, inst.character_id
         )
         return inst
@@ -714,7 +714,7 @@ class PlayerCombatant(Combatant):
         inst = super().from_dict(raw, ctx, combat)
         inst.character_id = raw["character_id"]
         inst.character_owner = raw["character_owner"]
-        inst._character = cogs5e.models.character.Character.from_bot_and_ids_sync(
+        inst._character = character.Character.from_bot_and_ids_sync(
             ctx.bot, inst.character_owner, inst.character_id
         )
         return inst
@@ -742,13 +742,13 @@ class PlayerCombatant(Combatant):
             return
 
         # retrieve from character constructor
-        self._character = await cogs5e.models.character.Character.from_bot_and_ids(
+        self._character = await character.Character.from_bot_and_ids(
             ctx.bot, self.character_owner, self.character_id
         )
 
     # ==== members ====
     @property
-    def character(self) -> cogs5e.models.character.Character:
+    def character(self):
         return self._character
 
     @property

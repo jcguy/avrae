@@ -6,9 +6,9 @@ import re
 
 from bson import ObjectId
 
-from aliasing.errors import CollectableNotFound, CollectionNotFound
-from cogs5e.models.errors import NotAllowed
-from utils.subscription_mixins import EditorMixin, GuildActiveMixin, SubscriberMixin
+from .errors import CollectableNotFound, CollectionNotFound
+from ..cogs5e.models.errors import NotAllowed
+from ..utils.subscription_mixins import EditorMixin, GuildActiveMixin, SubscriberMixin
 
 
 class PublicationState(enum.Enum):

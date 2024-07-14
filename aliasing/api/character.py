@@ -1,12 +1,12 @@
 from functools import cached_property
 
-import cogs5e.models.sheet.player as player_api
-from aliasing import helpers
-from aliasing.utils import optional_cast_arg_or_default, UNSET
-from aliasing.api.statblock import AliasStatBlock
-from cogs5e.models.errors import ConsumableException
-from cogs5e.models.sheet.coinpurse import CoinsArgs
-from utils.constants import COIN_TYPES
+from ...cogs5e.models.sheet import player as player_api
+from .. import helpers
+from ..utils import optional_cast_arg_or_default, UNSET
+from ..api.statblock import AliasStatBlock
+from ...cogs5e.models.errors import ConsumableException
+from ...cogs5e.models.sheet.coinpurse import CoinsArgs
+from ...utils.constants import COIN_TYPES
 
 
 class AliasCharacter(AliasStatBlock):

@@ -1,25 +1,24 @@
-from gamedata.shared import *
-import gamedata.background
-import gamedata.feat
-import gamedata.item
-import gamedata.klass
-import gamedata.mixins
-import gamedata.monster
-import gamedata.race
-import gamedata.spell
-import gamedata.compendium
+from .shared import *
+from .background import Background
+from .feat import Feat
+from .item import AdventuringGear, Armor, MagicItem, Weapon, HomebrewItem
+from .klass import Class, Subclass
+from .monster import Monster
+from .race import Race
+from .spell import Spell
+from .compendium import compendium
 
-Background = gamedata.background.Background
-Feat = gamedata.feat.Feat
-AdventuringGear = gamedata.item.AdventuringGear
-Armor = gamedata.item.Armor
-MagicItem = gamedata.item.MagicItem
-Weapon = gamedata.item.Weapon
-HomebrewItem = gamedata.item.HomebrewItem
-Class = gamedata.klass.Class
-Subclass = gamedata.klass.Subclass
-Monster = gamedata.monster.Monster
-Race = gamedata.race.Race
-Spell = gamedata.spell.Spell
+Background = Background
+Feat = Feat
+AdventuringGear = AdventuringGear
+Armor = Armor
+MagicItem = MagicItem
+Weapon = Weapon
+HomebrewItem = HomebrewItem
+Class = Class
+Subclass = Subclass
+Monster = Monster
+Race = Race
+Spell = Spell
 
-compendium = gamedata.compendium.compendium
+compendium = compendium

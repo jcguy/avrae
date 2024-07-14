@@ -5,8 +5,8 @@ import d20
 import draconic
 from d20.utils import TreeType
 
-import aliasing.api.statblock
-from cogs5e.models.sheet.statblock import StatBlock
+from ....aliasing.api import statblock as statblock_api
+from ..sheet.statblock import StatBlock
 
 
 def maybe_alias_statblock(target):
@@ -14,9 +14,9 @@ def maybe_alias_statblock(target):
     if not isinstance(target, (StatBlock, str, type(None))):
         raise ValueError("target must be a statblock, str, or None")
     if isinstance(target, StatBlock):
-        return aliasing.api.statblock.AliasStatBlock(target)
+        return statblock_api.AliasStatBlock(target)
 
-    return aliasing.api.statblock.AliasStatBlock(StatBlock(name=target or "Target"))
+    return statblock_api.AliasStatBlock(StatBlock(name=target or "Target"))
 
 
 def upcast_scaled_dice(effect, autoctx, dice_ast):

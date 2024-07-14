@@ -1,6 +1,6 @@
 from typing import Optional
 
-from utils.enums import ActivationType
+from ....utils.enums import ActivationType
 
 
 class Actions:

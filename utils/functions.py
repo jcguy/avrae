@@ -14,8 +14,8 @@ from typing import Callable, TYPE_CHECKING, TypeVar
 import disnake
 from rapidfuzz import fuzz, process
 
-from cogs5e.models.errors import NoSelectionElements, SelectionCancelled
-from utils import constants, enums
+from ..cogs5e.models.errors import NoSelectionElements, SelectionCancelled
+from ..utils import constants, enums
 
 if TYPE_CHECKING:
     from utils.context import AvraeContext

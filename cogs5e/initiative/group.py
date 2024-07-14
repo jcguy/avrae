@@ -1,5 +1,5 @@
-from cogs5e.models.sheet.attack import Attack, AttackList
-from cogs5e.models.sheet.base import Skill
+from ..models.sheet.attack import Attack, AttackList
+from ..models.sheet.base import Skill
 from .combatant import Combatant
 from .types import CombatantType
 from .utils import create_combatant_id

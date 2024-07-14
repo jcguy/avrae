@@ -3,7 +3,7 @@ import logging
 import time
 import urllib.parse
 
-from utils import config
+from ....utils import config
 from .errors import InsertFailure, LoginFailure
 from .httpv2 import DicecloudV2HTTP
 
@@ -17,7 +17,7 @@ class DicecloudV2Client:
 
     def __init__(self, debug=False):
         self.http = DicecloudV2HTTP(
-            API_BASE, config.DICECLOUDV2_USER, config.DICECLOUDV2_PASS, config.DCV2_NO_AUTH, debug=debug
+            API_BASE, config.DICECLOUDV2_EMAIL, config.DICECLOUDV2_PASS, config.DCV2_NO_AUTH, debug=debug
         )
 
     @classmethod

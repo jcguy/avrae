@@ -10,15 +10,15 @@ import pydantic
 import yaml
 from markdownify import markdownify
 
-import gamedata as gd
-from cogs5e.models.errors import ExternalImportError, NoActiveBrew
-from cogs5e.models.sheet.attack import Attack, AttackList
-from cogs5e.models.sheet.base import BaseStats, Saves, Skills
-from cogs5e.models.sheet.resistance import Resistances
-from cogs5e.models.sheet.spellcasting import SpellbookSpell
-from gamedata.monster import Monster, MonsterSpellbook, Trait
-from utils.functions import search_and_select
-from utils.subscription_mixins import CommonHomebrewMixin
+from .... import gamedata as gd
+from ..errors import ExternalImportError, NoActiveBrew
+from ..sheet.attack import Attack, AttackList
+from ..sheet.base import BaseStats, Saves, Skills
+from ..sheet.resistance import Resistances
+from ..sheet.spellcasting import SpellbookSpell
+from ....gamedata.monster import Monster, MonsterSpellbook, Trait
+from ....utils.functions import search_and_select
+from ....utils.subscription_mixins import CommonHomebrewMixin
 
 log = logging.getLogger(__name__)
 

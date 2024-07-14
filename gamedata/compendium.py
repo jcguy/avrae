@@ -8,18 +8,18 @@ from typing import Callable, List, Type, TypeVar
 
 import motor.motor_asyncio
 
-import gamedata.spell
-from gamedata.action import Action
-from gamedata.background import Background
-from gamedata.book import Book
-from gamedata.feat import Feat
-from gamedata.item import AdventuringGear, Armor, MagicItem, Weapon
-from gamedata.klass import Class, ClassFeature, Subclass
-from gamedata.mixins import LimitedUseGrantorMixin
-from gamedata.monster import Monster
-from gamedata.race import Race, RaceFeature, SubRace
-from gamedata.shared import Sourced
-from utils import config
+from . import spell
+from .action import Action
+from .background import Background
+from .book import Book
+from .feat import Feat
+from .item import AdventuringGear, Armor, MagicItem, Weapon
+from .klass import Class, ClassFeature, Subclass
+from .mixins import LimitedUseGrantorMixin
+from .monster import Monster
+from .race import Race, RaceFeature, SubRace
+from .shared import Sourced
+from ..utils import config
 import ldclient
 
 log = logging.getLogger(__name__)
@@ -66,7 +66,7 @@ class Compendium:
 
         self.feats = []  # type: list[Feat]
         self.monsters = []  # type: list[Monster]
-        self.spells = []  # type: list[gamedata.spell.Spell]
+        self.spells = []  # type: list[spell.Spell]
         self.books = []  # type: list[Book]
         self.actions = []  # type: list[Action]
 
@@ -174,7 +174,7 @@ class Compendium:
         self.magic_items = self._deserialize_and_register_lookups(MagicItem, self.raw_magic_items)
         self.weapons = self._deserialize_and_register_lookups(Weapon, self.raw_weapons)
         self.monsters = self._deserialize_and_register_lookups(Monster, self.raw_monsters)
-        self.spells = self._deserialize_and_register_lookups(gamedata.spell.Spell, self.raw_spells)
+        self.spells = self._deserialize_and_register_lookups(spell.Spell, self.raw_spells)
         self.books = self._deserialize_and_register_lookups(Book, self.raw_books)
 
         # generated

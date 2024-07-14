@@ -1,9 +1,9 @@
 import logging
 from typing import List
 
-from ddb.baseclient import BaseClient
-from ddb.utils import ApiBaseModel
-from utils.config import DDB_SCDS_SERVICE_URL
+from ..baseclient import BaseClient
+from ..utils import ApiBaseModel
+from ...utils.config import DDB_SCDS_SERVICE_URL
 from .scds_types import SimplifiedCharacterData
 
 log = logging.getLogger(__name__)

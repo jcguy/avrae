@@ -1,8 +1,8 @@
 import dataclasses
 
-from cogs5e.models.errors import InvalidArgument
+from ..errors import InvalidArgument
 from .mixins import HasIntegrationMixin
-from utils.constants import COIN_TYPES
+from ....utils.constants import COIN_TYPES
 
 
 @dataclasses.dataclass

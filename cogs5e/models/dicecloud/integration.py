@@ -2,8 +2,8 @@ import logging
 
 import MeteorClient
 
-from cogs5e.models.dicecloud.client import DicecloudClient
-from cogs5e.models.sheet.integrations import LiveIntegration
+from .client import DicecloudClient
+from ..sheet.integrations import LiveIntegration
 
 log = logging.getLogger(__name__)
 

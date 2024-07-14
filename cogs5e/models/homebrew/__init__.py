@@ -1,4 +1,4 @@
-import gamedata
+from .... import gamedata
 from .base import HomebrewContainer
 
 

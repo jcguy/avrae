@@ -7,8 +7,8 @@ from typing import TYPE_CHECKING, Union
 
 import disnake.ui
 
-from utils import constants
-from utils.functions import smart_trim
+from ...utils import constants
+from ...utils.functions import smart_trim
 from .types import CombatantType
 
 import ldclient

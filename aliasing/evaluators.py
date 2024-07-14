@@ -16,11 +16,11 @@ import json.scanner
 import yaml
 from yaml import composer, parser, scanner
 
-import aliasing.api.character as character_api
-import aliasing.api.combat as combat_api
-from aliasing import helpers
-from aliasing.api.context import AliasContext
-from aliasing.api.functions import (
+from .api import character as character_api
+from .api import combat as combat_api
+from .helpers import get_uvars, update_uvars
+from .api.context import AliasContext
+from .api.functions import (
     _roll,
     _vroll,
     create_signature,
@@ -36,13 +36,13 @@ from aliasing.api.functions import (
     verify_signature,
     vroll,
 )
-from aliasing.errors import EvaluationError, FunctionRequiresCharacter
-from aliasing.personal import _CustomizationBase
-from aliasing.utils import ExecutionScope
-from aliasing.workshop import WorkshopCollectableObject
-from cogs5e.models.errors import InvalidArgument
-from utils.argparser import argparse
-from utils.dice import PersistentRollContext
+from .errors import EvaluationError, FunctionRequiresCharacter
+from .personal import _CustomizationBase
+from .utils import ExecutionScope
+from .workshop import WorkshopCollectableObject
+from ..cogs5e.models.errors import InvalidArgument
+from ..utils.argparser import argparse
+from ..utils.dice import PersistentRollContext
 
 DEFAULT_BUILTINS = {
     # builtins
@@ -167,7 +167,7 @@ class ScriptingEvaluator(draconic.DraconicInterpreter):
 
     @classmethod
     async def new(cls, ctx):
-        uvars = await helpers.get_uvars(ctx)
+        uvars = await get_uvars(ctx)
         inst = cls(ctx, builtins=DEFAULT_BUILTINS, initial_names=uvars)
         inst._cache["uvars"].update(uvars)
         return inst
@@ -196,7 +196,7 @@ class ScriptingEvaluator(draconic.DraconicInterpreter):
         if self.combat_changed and "combat" in self._cache and self._cache["combat"]:
             await self._cache["combat"].func_commit(self.ctx)
         if self.uvars_changed and "uvars" in self._cache and self._cache["uvars"] is not None:
-            await helpers.update_uvars(self.ctx, self._cache["uvars"], self.uvars_changed)
+            await update_uvars(self.ctx, self._cache["uvars"], self.uvars_changed)
 
     # helpers
     def exists(self, name):

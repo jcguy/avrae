@@ -2,8 +2,8 @@ from typing import TYPE_CHECKING, Tuple, Union
 
 import d20
 
-from utils import constants, enums
-from utils.functions import camel_to_title, maybe_mod, natural_join, reconcile_adv
+from .....utils import constants, enums
+from .....utils.functions import camel_to_title, maybe_mod, natural_join, reconcile_adv
 from . import Effect
 from ..errors import AutomationException, InvalidIntExpression, TargetException
 from ..results import CheckResult

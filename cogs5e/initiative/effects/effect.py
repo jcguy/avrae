@@ -2,8 +2,8 @@ import itertools
 import math
 from typing import Iterator, List, Optional, TYPE_CHECKING, Tuple, Union
 
-from cogs5e.models.errors import InvalidArgument
-from utils.argparser import ParsedArguments, argparse
+from ...models.errors import InvalidArgument
+from ....utils.argparser import ParsedArguments, argparse
 from .interaction import AttackInteraction, ButtonInteraction, attack_interactions_from_args
 from .passive import InitPassiveEffect
 from ..types import CombatantType

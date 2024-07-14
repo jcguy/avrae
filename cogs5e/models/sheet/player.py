@@ -2,9 +2,9 @@ import collections
 
 import d20
 
-from cogs5e.models.errors import CounterOutOfBounds, InvalidArgument, NoReset
-from utils import constants
-from utils.functions import bubble_format
+from ....cogs5e.models.errors import CounterOutOfBounds, InvalidArgument, NoReset
+from ....utils import constants
+from ....utils.functions import bubble_format
 from .attack import AttackList
 from .spellcasting import SpellbookSpell
 

@@ -3,12 +3,12 @@ from typing import List, Optional
 
 import disnake
 
-import aliasing.api.combat
-from cogs5e import initiative as init
-from cogs5e.models.errors import InvalidArgument
-from cogs5e.models.sheet.resistance import Resistance
-from utils.enums import AdvantageType
-from utils.functions import smart_trim
+from .....aliasing.api import combat as combat_api
+from .... import initiative as init
+from ...errors import InvalidArgument
+from ...sheet.resistance import Resistance
+from .....utils.enums import AdvantageType
+from .....utils.functions import smart_trim
 from . import Effect
 from ..errors import AutomationException, InvalidIntExpression, TargetException
 from ..results import IEffectResult
@@ -118,7 +118,7 @@ class LegacyIEffect(Effect):
             # parenting
             explicit_parent = None
             if self.parent is not None and (parent_ref := autoctx.metavars.get(self.parent, None)) is not None:
-                if not isinstance(parent_ref, (IEffectMetaVar, aliasing.api.combat.SimpleEffect)):
+                if not isinstance(parent_ref, (IEffectMetaVar, combat_api.SimpleEffect)):
                     raise InvalidArgument(
                         f"Could not set IEffect parent: The variable `{self.parent}` is not an IEffectMetaVar "
                         f"(got `{type(parent_ref).__name__}`)."
@@ -315,7 +315,7 @@ class IEffect(Effect):
             # parenting
             explicit_parent = None
             if self.parent is not None and (parent_ref := autoctx.metavars.get(self.parent, None)) is not None:
-                if not isinstance(parent_ref, (IEffectMetaVar, aliasing.api.combat.SimpleEffect)):
+                if not isinstance(parent_ref, (IEffectMetaVar, combat_api.SimpleEffect)):
                     raise InvalidArgument(
                         f"Could not set IEffect parent: The variable `{self.parent}` is not an initiative effect "
                         f"(expected IEffectMetaVar or SimpleEffect, got `{type(parent_ref).__name__}`)."
@@ -324,7 +324,7 @@ class IEffect(Effect):
                 explicit_parent = parent_ref._effect
             # explicit support for parenting to the parent of this ieffect's parent
             elif self.parent == "ieffect.parent" and (parent_ref := autoctx.metavars.get("ieffect", None)) is not None:
-                if not isinstance(parent_ref, aliasing.api.combat.SimpleEffect):
+                if not isinstance(parent_ref, combat_api.SimpleEffect):
                     raise InvalidArgument(
                         f"Could not set IEffect parent: The variable `{self.parent}` is not an initiative effect "
                         f"(expected SimpleEffect, got `{type(parent_ref).__name__}`)."

@@ -20,7 +20,7 @@ import disnake
 from aiobotocore.session import get_session
 from pydantic import BaseModel, Field
 
-from utils import config
+from ...utils import config
 from .utils import nlp_feature_flag_enabled
 
 if TYPE_CHECKING:

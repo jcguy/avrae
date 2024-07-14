@@ -1,6 +1,6 @@
 from typing import Optional, TYPE_CHECKING
 
-from utils import enums
+from ....utils import enums
 
 if TYPE_CHECKING:
     from cogs5e.models.automation import Automation
@@ -42,7 +42,7 @@ class Attack:
         elif "bonus" in d or d.get("_v", 0) < 2:
             return cls.from_v1(d)
 
-        from cogs5e.models import automation
+        from .. import automation
 
         the_automation = automation.Automation.from_data(d["automation"])
         activation_type = enums.ActivationType(d["activation_type"]) if d.get("activation_type") is not None else None
@@ -247,7 +247,7 @@ class AttackList:
 
 def old_to_automation(bonus: str | None = None, damage: str | None = None, details: str | None = None):
     """Returns an Automation instance representing an old attack."""
-    from cogs5e.models import automation
+    from .. import automation
 
     if damage:
         damage = automation.Damage(damage)

@@ -9,19 +9,19 @@ import disnake
 import draconic
 from disnake.ext.commands import ArgumentParsingError
 
-from aliasing import evaluators
-from aliasing.api.functions import AliasException
-from aliasing.constants import CVAR_SIZE_LIMIT, GVAR_SIZE_LIMIT, SVAR_SIZE_LIMIT, UVAR_SIZE_LIMIT, VAR_NAME_LIMIT
-from aliasing.errors import AliasNameConflict, CollectableNotFound, CollectableRequiresLicenses, EvaluationError
-from aliasing.personal import Alias, Servalias, Servsnippet, Snippet
-from aliasing.utils import ExecutionScope
-from aliasing.workshop import WorkshopAlias, WorkshopCollection, WorkshopSnippet
-from cogs5e.models.embeds import EmbedWithAuthor
-from cogs5e.models.errors import AvraeException, InvalidArgument, NoCharacter, NotAllowed
-from gamedata.compendium import compendium
-from gamedata.lookuputils import long_source_name
-from utils.argparser import argquote, argsplit
-from utils.functions import natural_join
+from . import evaluators
+from .api.functions import AliasException
+from .constants import CVAR_SIZE_LIMIT, GVAR_SIZE_LIMIT, SVAR_SIZE_LIMIT, UVAR_SIZE_LIMIT, VAR_NAME_LIMIT
+from .errors import AliasNameConflict, CollectableNotFound, CollectableRequiresLicenses, EvaluationError
+from .personal import Alias, Servalias, Servsnippet, Snippet
+from .utils import ExecutionScope
+from .workshop import WorkshopAlias, WorkshopCollection, WorkshopSnippet
+from ..cogs5e.models.embeds import EmbedWithAuthor
+from ..cogs5e.models.errors import AvraeException, InvalidArgument, NoCharacter, NotAllowed
+from ..gamedata.compendium import compendium
+from ..gamedata.lookuputils import long_source_name
+from ..utils.argparser import argquote, argsplit
+from ..utils.functions import natural_join
 
 if TYPE_CHECKING:
     from utils.context import AvraeContext

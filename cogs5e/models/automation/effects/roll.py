@@ -5,7 +5,7 @@ import d20
 import draconic
 import math
 
-from utils.dice import RerollableStringifier
+from .....utils.dice import RerollableStringifier
 from . import Effect
 from .. import utils
 from ..results import RollResult

@@ -1,8 +1,8 @@
 import d20
 
-from cogs5e.models.errors import InvalidSaveType
-from utils import enums
-from utils.functions import maybe_mod, reconcile_adv, verbose_stat
+from ...errors import InvalidSaveType
+from .....utils import enums
+from .....utils.functions import maybe_mod, reconcile_adv, verbose_stat
 from . import Effect
 from ..errors import AutomationException, NoSpellDC, TargetException
 from ..results import SaveResult

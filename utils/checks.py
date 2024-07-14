@@ -1,6 +1,6 @@
 from disnake.ext import commands
 
-from utils.functions import natural_join
+from .functions import natural_join
 
 is_owner = commands.is_owner
 

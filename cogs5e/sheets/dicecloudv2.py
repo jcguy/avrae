@@ -7,23 +7,24 @@ Created on Nov 08, 2022
 import collections
 import logging
 import re
+from typing import Tuple
 
-from cogs5e.models.sheet.coinpurse import Coinpurse
+from ..models.sheet.coinpurse import Coinpurse
 
-from cogs5e.models.character import Character
-from cogs5e.models.dicecloud.clientv2 import DicecloudV2Client
-from cogs5e.models.dicecloud.errors import DicecloudException, AutoParserException
-from cogs5e.models.dicecloud.autoparser import DCV2AutoParser
-from cogs5e.models.errors import ExternalImportError
-from cogs5e.models.sheet.action import Action, Actions
-from cogs5e.models.sheet.attack import Attack, AttackList
-from cogs5e.models.sheet.base import BaseStats, Levels, Saves, Skill, Skills
-from cogs5e.models.sheet.resistance import Resistances
-from cogs5e.models.sheet.spellcasting import Spellbook, SpellbookSpell
-from gamedata.compendium import compendium
-from utils.constants import DAMAGE_TYPES, SAVE_NAMES, SKILL_NAMES, STAT_NAMES
-from utils.functions import search
-from utils.enums import ActivationType
+from ..models.character import Character
+from ..models.dicecloud.clientv2 import DicecloudV2Client
+from ..models.dicecloud.errors import DicecloudException, AutoParserException
+from ..models.dicecloud.autoparser import DCV2AutoParser
+from ..models.errors import ExternalImportError
+from ..models.sheet.action import Action, Actions
+from ..models.sheet.attack import Attack, AttackList
+from ..models.sheet.base import BaseStats, Levels, Saves, Skill, Skills
+from ..models.sheet.resistance import Resistances
+from ..models.sheet.spellcasting import Spellbook, SpellbookSpell
+from ...gamedata.compendium import compendium
+from ...utils.constants import DAMAGE_TYPES, SAVE_NAMES, SKILL_NAMES, STAT_NAMES
+from ...utils.functions import search
+from ...utils.enums import ActivationType
 from .abc import SHEET_VERSION, SheetLoaderABC
 from .utils import get_actions_for_name
 
@@ -240,7 +241,7 @@ class DicecloudV2Parser(SheetLoaderABC):
     def get_stats(self) -> BaseStats:
         return self._parse_attributes()[3]
 
-    def _parse_attributes(self) -> (int, int, {str: int}, BaseStats, [Skill], [dict]):
+    def _parse_attributes(self) -> Tuple[int, int, dict[str, int], BaseStats, list[Skill], list[dict]]:
         if self.character_data is None:
             raise Exception("You must call get_character() first.")
         if self.parsed_attrs:

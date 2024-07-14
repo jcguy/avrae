@@ -1,11 +1,10 @@
 from contextlib import suppress
 from typing import Literal, TYPE_CHECKING
 
-from cogs5e.initiative import CombatNotFound, CombatantGroup
-from cogs5e.models.character import Character
-from cogs5e.models.errors import InvalidArgument, SelectionException
-from utils.argparser import ParsedArguments, argparse
-from utils.functions import ordinal
+from ..initiative import CombatNotFound, CombatantGroup
+from ..models.errors import InvalidArgument, SelectionException
+from ...utils.argparser import ParsedArguments, argparse
+from ...utils.functions import ordinal
 
 if TYPE_CHECKING:
     from utils.context import AvraeContext
@@ -21,7 +20,7 @@ async def maybe_combat_caster(ctx, caster, combat=None):
         with suppress(CombatNotFound):
             combat = await ctx.get_combat()
 
-    if combat is not None and isinstance(caster, Character):
+    if combat is not None and isinstance(caster, "Character"):
         combatant = next(
             (
                 c

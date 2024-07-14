@@ -6,11 +6,11 @@ import aiohttp
 import cachetools
 from aiobotocore.session import get_session
 
-from cogsmisc.stats import Stats
-from ddb import auth, character, entitlements, waterdeep
-from ddb.errors import AuthException
-from ddb.utils import update_user_map
-from utils.config import DDB_AUTH_SERVICE_URL as AUTH_BASE_URL, DYNAMO_ENTITLEMENTS_TABLE, DYNAMO_REGION
+from ..cogsmisc.stats import Stats
+from . import auth, character, entitlements, waterdeep
+from .errors import AuthException
+from .utils import update_user_map
+from ..utils.config import DDB_AUTH_SERVICE_URL as AUTH_BASE_URL, DYNAMO_ENTITLEMENTS_TABLE, DYNAMO_REGION
 
 # dynamo
 # env: AWS_ACCESS_KEY_ID

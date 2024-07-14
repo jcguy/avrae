@@ -1,7 +1,7 @@
 import collections
 
-from cogs5e.models.sheet.action import Action
-from gamedata import compendium
+from ..models.sheet.action import Action
+from ...gamedata import compendium
 
 
 # ==== Name => Action Discovery ====

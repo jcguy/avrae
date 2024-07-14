@@ -1,9 +1,9 @@
 import logging
 
-from ddb import campaign
-from ddb.baseclient import BaseClient
-from ddb.errors import WaterdeepException
-from utils.config import DDB_WATERDEEP_URL
+from . import campaign
+from .baseclient import BaseClient
+from .errors import WaterdeepException
+from ..utils.config import DDB_WATERDEEP_URL
 
 log = logging.getLogger(__name__)
 

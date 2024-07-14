@@ -10,10 +10,10 @@ import disnake.ext.commands
 import disnake.utils
 import draconic
 
-from cogs5e.models.errors import AvraeException
-from cogs5e.utils.gameutils import parse_coin_args
-from utils import config
-from utils.dice import RerollableStringifier
+from ...cogs5e.models.errors import AvraeException
+from ...cogs5e.utils.gameutils import parse_coin_args
+from ...utils import config
+from ...utils.dice import RerollableStringifier
 from .context import AliasAuthor, AliasChannel, AliasGuild
 from ..utils import ExecutionScope
 from draconic.types import approx_len_of

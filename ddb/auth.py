@@ -2,7 +2,7 @@ import time
 
 import jwt
 
-from utils.config import (
+from ..utils.config import (
     DDB_AUTH_AUDIENCE as AUDIENCE,
     DDB_AUTH_EXPIRY_SECONDS as EXPIRY_SECONDS,
     DDB_AUTH_ISSUER as ISSUER,

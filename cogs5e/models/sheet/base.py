@@ -1,5 +1,5 @@
-from utils.constants import SAVE_NAMES, SKILL_MAP, SKILL_NAMES, STAT_ABBREVIATIONS, STAT_NAMES
-from utils.functions import camel_to_title, verbose_stat
+from ....utils.constants import SAVE_NAMES, SKILL_MAP, SKILL_NAMES, STAT_ABBREVIATIONS, STAT_NAMES
+from ....utils.functions import camel_to_title, verbose_stat
 
 
 class BaseStats:

@@ -1,10 +1,10 @@
 import random
 
-from cogs5e.models.sheet.attack import AttackList
-from cogs5e.models.sheet.base import BaseStats, Levels, Saves, Skills
-from cogs5e.models.sheet.resistance import Resistances
-from cogs5e.models.sheet.spellcasting import Spellbook
-from utils.constants import STAT_NAMES
+from .attack import AttackList
+from .base import BaseStats, Levels, Saves, Skills
+from .resistance import Resistances
+from .spellcasting import Spellbook
+from ....utils.constants import STAT_NAMES
 
 DESERIALIZE_MAP = {
     "stats": BaseStats,

@@ -2,8 +2,8 @@ import random
 
 import disnake
 
-from utils.constants import HOMEBREW_ICON
-from utils.functions import chunk_text, trim_str
+from ...utils.constants import HOMEBREW_ICON
+from ...utils.functions import chunk_text, trim_str
 
 MAX_NUM_FIELDS = 25
 

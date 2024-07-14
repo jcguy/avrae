@@ -1,6 +1,6 @@
 import draconic.exceptions
 
-from cogs5e.models.errors import AvraeException
+from ..cogs5e.models.errors import AvraeException
 
 
 class EvaluationError(AvraeException, draconic.exceptions.DraconicException):

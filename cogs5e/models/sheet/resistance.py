@@ -2,7 +2,7 @@ import re
 
 import d20
 
-from utils.constants import RESIST_TYPES
+from ....utils.constants import RESIST_TYPES
 
 
 class Resistances:

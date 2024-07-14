@@ -7,8 +7,8 @@ import disnake
 from d20 import roll
 from pydantic import BaseModel
 
-from cogs5e.models.errors import NoCharacter
-from utils.functions import search_and_select
+from ..models.errors import NoCharacter
+from ...utils.functions import search_and_select
 from .combatant import Combatant, MonsterCombatant, PlayerCombatant
 from .errors import *
 from .group import CombatantGroup

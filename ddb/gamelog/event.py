@@ -3,7 +3,7 @@ import json
 import time
 import uuid
 
-from ddb.gamelog.constants import AVRAE_EVENT_SOURCE
+from .constants import AVRAE_EVENT_SOURCE
 
 
 class GameLogEvent:
